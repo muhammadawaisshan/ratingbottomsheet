@@ -43,7 +43,7 @@ To include the library in your project, add the following lines to your `setting
 Basic Example
 To show the rating bottom sheet, use the RatingBottomSheetBuilder class to configure it:
  ```koltin
-RatingBottomSheetBuilder()
+RatingBottomSheetBuilder
     .setBackgroundColor(R.color.your_background_color)
     .setTextColor(R.color.your_text_color)
     .setFilledIcon(R.drawable.your_filled_icon)
@@ -81,7 +81,7 @@ class YourActivity : AppCompatActivity() {
         setContentView(R.layout.activity_your)
 
         // Show the rating bottom sheet
-        RatingBottomSheetBuilder()
+        RatingBottomSheetBuilder
             .setBackgroundColor(R.color.your_background_color)
             .setTextColor(R.color.your_text_color)
             .setFilledIcon(R.drawable.your_filled_icon)
