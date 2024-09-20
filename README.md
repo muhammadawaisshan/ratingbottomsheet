@@ -57,21 +57,21 @@ RatingBottomSheetBuilder()
         // Handle the rating submission
     }
 ```
-## Customization Options
+# Customization Options for Rating Bottom Sheet
 
-You can customize the appearance and functionality of the bottom sheet using the following methods:
-
-- **Background Color**: Set the background color using `setBackgroundColor(@ColorRes color: Int)`.
-- **Text Color**: Set the color of the text using `setTextColor(@ColorRes color: Int)`.
-- **Filled Icon**: Use `setFilledIcon(@DrawableRes resId: Int)` to set the icon for filled stars.
-- **Unfilled Icon**: Use `setUnfilledIcon(@DrawableRes resId: Int)` to set the icon for unfilled stars.
-- **Emoji for Ratings**: Set emojis for each rating level:
-  - `setRatingOneEmoji(@DrawableRes resId: Int)`
-  - `setRatingTwoEmoji(@DrawableRes resId: Int)`
-  - `setRatingThreeEmoji(@DrawableRes resId: Int)`
-  - `setRatingFourEmoji(@DrawableRes resId: Int)`
-  - `setRatingFiveEmoji(@DrawableRes resId: Int)`
-How It Works
+| Method Name                             | Description                                                      |
+|-----------------------------------------|------------------------------------------------------------------|
+| `setBackgroundColor(@ColorRes color: Int)` | Set the background color of the bottom sheet.                    |
+| `setTextColor(@ColorRes color: Int)`       | Set the color of the text displayed in the bottom sheet.         |
+| `setFilledIcon(@DrawableRes resId: Int)`   | Set the icon for filled stars.                                   |
+| `setUnfilledIcon(@DrawableRes resId: Int)` | Set the icon for unfilled stars.                                 |
+| `setRatingOneEmoji(@DrawableRes resId: Int)` | Set the emoji for a 1-star rating.                              |
+| `setRatingTwoEmoji(@DrawableRes resId: Int)` | Set the emoji for a 2-star rating.                              |
+| `setRatingThreeEmoji(@DrawableRes resId: Int)` | Set the emoji for a 3-star rating.                              |
+| `setRatingFourEmoji(@DrawableRes resId: Int)`  | Set the emoji for a 4-star rating.                              |
+| `setRatingFiveEmoji(@DrawableRes resId: Int)`  | Set the emoji for a 5-star rating.                              |
+| `show(activity: FragmentActivity, onSubmitClicked: ((Int, BottomSheetDialogFragment) -> Unit))` | Display the bottom sheet with the configured settings.          |
+##How It Works
 The library creates a BottomSheetDialogFragment that includes:
 
 A customizable layout where users can select a rating.
