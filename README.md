@@ -1,4 +1,5 @@
-# Rating Bottom Sheet
+
+# Rating Bottom Sheet [![](https://jitpack.io/v/bucket04/ratingbottomsheet.svg)](https://jitpack.io/#bucket04/ratingbottomsheet)
 
 A customizable Android library for displaying a rating bottom sheet dialog that provides emoji feedback. This library simplifies the process of integrating a rating system into your Android applications, making it easy to collect user ratings in a visually appealing manner.
 
@@ -94,7 +95,6 @@ class YourActivity : AppCompatActivity() {
     }
 }
 ```
-[![](https://jitpack.io/v/bucket04/ratingbottomsheet.svg)](https://jitpack.io/#bucket04/ratingbottomsheet)
 
  
  
