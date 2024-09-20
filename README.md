@@ -9,11 +9,7 @@ A customizable Android library for displaying a rating bottom sheet dialog that 
 - [Usage](#usage)
   - [Basic Example](#basic-example)
   - [Customization Options](#customization-options)
-- [How It Works](#how-it-works)
-- [Method Overview](#method-overview)
 - [Example Usage](#example-usage)
-- [License](#license)
-- [Contributing](#contributing)
 - [Contact](#contact)
 
 ## Features
@@ -98,12 +94,9 @@ class YourActivity : AppCompatActivity() {
     }
 }
 ```
-License
-This project is licensed under the Apache License 2.0. See the LICENSE file for more information.
-
-Contributing
-Contributions are welcome! If you find any issues or want to suggest improvements, please open an issue or submit a pull request. Make sure to follow the code style and include tests for new features.
+ 
+ 
 
 Contact
-For any inquiries or support, please reach out to Your Name.
+For any inquiries or support, please reach out muhamadawaiss400@gmail.com
 Feel free to customize any parts of the text to better fit your library and personal contact information!
