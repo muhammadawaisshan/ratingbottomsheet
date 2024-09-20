@@ -71,30 +71,8 @@ RatingBottomSheetBuilder()
 | `setRatingFourEmoji(@DrawableRes resId: Int)`  | Set the emoji for a 4-star rating.                              |
 | `setRatingFiveEmoji(@DrawableRes resId: Int)`  | Set the emoji for a 5-star rating.                              |
 | `show(activity: FragmentActivity, onSubmitClicked: ((Int, BottomSheetDialogFragment) -> Unit))` | Display the bottom sheet with the configured settings.          |
-##How It Works
-The library creates a BottomSheetDialogFragment that includes:
-
-A customizable layout where users can select a rating.
-Emoji visuals that respond to user selection.
-A submit button that triggers a callback with the selected rating.
-Internal Structure
-RatingBottomSheetBuilder: A builder class to configure and show the bottom sheet.
-RatingBottomSheetFragment: The fragment that displays the rating UI and handles user interactions.
-Method Overview
-Here's a quick overview of the key methods available in the RatingBottomSheetBuilder:
-
-Method	Description
-setBackgroundColor(@ColorRes color: Int)	Set the background color of the bottom sheet.
-setTextColor(@ColorRes color: Int)	Set the color of the text displayed in the bottom sheet.
-setFilledIcon(@DrawableRes resId: Int)	Set the icon for filled stars.
-setUnfilledIcon(@DrawableRes resId: Int)	Set the icon for unfilled stars.
-setRatingOneEmoji(@DrawableRes resId: Int)	Set the emoji for a 1-star rating.
-setRatingTwoEmoji(@DrawableRes resId: Int)	Set the emoji for a 2-star rating.
-setRatingThreeEmoji(@DrawableRes resId: Int)	Set the emoji for a 3-star rating.
-setRatingFourEmoji(@DrawableRes resId: Int)	Set the emoji for a 4-star rating.
-setRatingFiveEmoji(@DrawableRes resId: Int)	Set the emoji for a 5-star rating.
-show(activity: FragmentActivity, onSubmitClicked: ((Int, BottomSheetDialogFragment) -> Unit))	Display the bottom sheet with the configured settings.
-Example Usage
+ 
+ Example Usage
 Here’s a full example of how to use the library in your activity:
 ```kotlin
 class YourActivity : AppCompatActivity() {
