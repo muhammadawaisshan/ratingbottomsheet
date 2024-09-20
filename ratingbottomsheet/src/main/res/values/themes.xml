@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="RatingBottomSheetTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
+
+    <style name="ToppROundedd" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/TopRound</item>
+    </style>
+
+    <style name="TopRound" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/_14sdp</item>
+        <item name="cornerSizeTopLeft">@dimen/_14sdp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+</resources>

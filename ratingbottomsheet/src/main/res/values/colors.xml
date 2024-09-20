@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#00A3FF</color>
+    <color name="colorAccent">#0F68A8</color>
+    <color name="lightText">#66666e</color>
+    <color name="orangeTheme">#FF8A00</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FAFF00</color>
+    <color name="offWhite">#EDEDED</color>
+    <color name="gray_color">#f7f7fa</color>
+    <color name="seperator_color">#d2d2d3</color>
+    <color name="main_bg_color">#ECF0F3</color>
+    <color name="themeGreen">#83D476</color>
+    <color name="green">#1BD15B</color>
+    <color name="ad_bg">#F0F6FC</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTextDark">#171719</color>
+    <color name="colorTextLight">#66666e</color>
+    <color name="lightTextColor">#66666e</color>
+    <color name="colorTextExtraLight">#afafaf</color>
+    <color name="colorTextMid">#313135</color>
+    <color name="premiumColor">#FFA800</color>
+    <color name="yellowish">#F2AD47</color>
+    <color name="selectedCardRatingSheet">#62991E</color>
+
+    <color name="blue">#1080d1</color>
+    <color name="appThemeColor">#03A9F4</color>
+    <color name="light_theme">#00D1FF</color>
+    <color name="light_green">#54F58D</color>
+    <color name="light_orange">#FEB738</color>
+    <color name="dark_orange">#FE881E</color>
+    <color name="light_red">#FF7182</color>
+    <color name="dark_red">#FF1B2B</color>
+    <color name="red">#F24747</color>
+    <color name="dark_theme">#00A3FF</color>
+    <color name="dark_green">#1BD15B</color>
+    <color name="strokeRate">#FFFFFFFF</color>
+
+    <color name="orange">#FE881E</color>
+    <color name="ad_bg_color">#ECE9E9</color>
+    <color name="ad_color">#FF8B04</color>
+    <color name="shimmer_effect_color">#BFBDBD</color>
+
+    <color name="strokeInner">#2871B8</color>
+    <color name="textInner">#4C4C4C</color>
+</resources>
