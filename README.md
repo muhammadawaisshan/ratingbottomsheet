@@ -37,11 +37,12 @@ repositories {
 
 dependencies {
     implementation("com.your.package:your-library-name:1.0.0")
-} 
-Usage
+}
+```
+#Usage
 Basic Example
 To show the rating bottom sheet, use the RatingBottomSheetBuilder class to configure it:
- 
+ ```koltin
 RatingBottomSheetBuilder()
     .setBackgroundColor(R.color.your_background_color)
     .setTextColor(R.color.your_text_color)
@@ -55,6 +56,7 @@ RatingBottomSheetBuilder()
     .show(activity) { rating, dialog ->
         // Handle the rating submission
     }
+```
 ## Customization Options
 
 You can customize the appearance and functionality of the bottom sheet using the following methods:
@@ -94,6 +96,7 @@ setRatingFiveEmoji(@DrawableRes resId: Int)	Set the emoji for a 5-star rating.
 show(activity: FragmentActivity, onSubmitClicked: ((Int, BottomSheetDialogFragment) -> Unit))	Display the bottom sheet with the configured settings.
 Example Usage
 Here’s a full example of how to use the library in your activity:
+```kotlin
 class YourActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,6 +119,7 @@ class YourActivity : AppCompatActivity() {
             }
     }
 }
+```
 License
 This project is licensed under the Apache License 2.0. See the LICENSE file for more information.
 
