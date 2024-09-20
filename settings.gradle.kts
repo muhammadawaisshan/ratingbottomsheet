@@ -22,5 +22,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Rating Bar"
-include(":app")
+include(":sample")
 include(":ratingbottomsheet")
