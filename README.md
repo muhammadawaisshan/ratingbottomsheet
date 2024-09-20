@@ -94,6 +94,8 @@ class YourActivity : AppCompatActivity() {
     }
 }
 ```
+[![](https://jitpack.io/v/bucket04/ratingbottomsheet.svg)](https://jitpack.io/#bucket04/ratingbottomsheet)
+
  
  
 
