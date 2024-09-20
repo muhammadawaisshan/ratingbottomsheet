@@ -28,13 +28,16 @@ A customizable Android library for displaying a rating bottom sheet dialog that 
 To include the library in your project, add the following lines to your `build.gradle.kts` file:
 
 ```kotlin
-repositories {
-    mavenCentral() // or your custom repository
+ dependencies {
+    implementation("com.github.bucket04:ratingbottomsheet:LATEST_VERSION")
 }
+```
 
-dependencies {
-    implementation("com.your.package:your-library-name:1.0.0")
-}
+To include the library in your project, add the following lines to your `settings.gradle.kts` file:
+```kotlin
+  repositories {
+        maven("https://jitpack.io")
+    }
 ```
 #Usage
 Basic Example
