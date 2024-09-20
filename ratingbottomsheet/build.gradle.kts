@@ -3,7 +3,19 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
+publishing {
+    publications {
+        create("release", MavenPublication::class) {
+            groupId = "com.iobits.tech"
+            artifactId = "ratingbottomsheet"
+            version = "1.0.0"
 
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+}
 android {
     namespace = "com.iobits.tech.ratingbottomsheet"
     compileSdk = 34
@@ -19,14 +31,13 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 
             )
         }
     }
     viewBinding {
-        enable= true
+        enable = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -35,14 +46,20 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation (libs.simpleratingbar)
-    implementation(libs.sdp.android)
+    implementation("com.github.ome450901:SimpleRatingBar:1.5.1")
+    implementation("com.intuit.sdp:sdp-android:1.1.0")
 
 }

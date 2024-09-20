@@ -1,5 +1,4 @@
-<resources>
-
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="RatingBottomSheetTheme" parent="Theme.MaterialComponents.Light.NoActionBar" />
 
     <style name="ToppROundedd" parent="@style/Widget.MaterialComponents.CardView">

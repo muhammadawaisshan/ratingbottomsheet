@@ -118,7 +118,7 @@ object RatingBottomSheetBuilder {
      * @param onSubmitClicked The callback to be invoked when the submit button is clicked, providing the rating and the dialog instance.
      */
     fun show(
-        activity: FragmentActivity, onSubmitClicked: ((Int, BottomSheetDialogFragment) -> Unit)
+        activity: FragmentActivity, onSubmitClicked: ((rating:Int, dialog:BottomSheetDialogFragment) -> Unit)
     ) {
         val fragment = RatingBottomSheetFragment(onSubmitClicked)
 
