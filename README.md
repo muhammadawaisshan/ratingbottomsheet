@@ -29,7 +29,7 @@ To include the library in your project, add the following lines to your `setting
         maven("https://jitpack.io")
     }
 ```
-#Usage
+## Usage
 Basic Example
 To show the rating bottom sheet, use the RatingBottomSheetBuilder class to configure it:
  ```koltin
