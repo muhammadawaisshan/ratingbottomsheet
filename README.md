@@ -3,16 +3,6 @@
 
 A customizable Android library for displaying a rating bottom sheet dialog that provides emoji feedback. This library simplifies the process of integrating a rating system into your Android applications, making it easy to collect user ratings in a visually appealing manner.
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Basic Example](#basic-example)
-  - [Customization Options](#customization-options)
-- [Example Usage](#example-usage)
-- [Contact](#contact)
-
 ## Features
 
 - **Customizable Background and Text Colors**: Easily change the appearance of the bottom sheet.
