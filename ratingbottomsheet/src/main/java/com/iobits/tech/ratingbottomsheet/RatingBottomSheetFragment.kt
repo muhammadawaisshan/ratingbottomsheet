@@ -17,9 +17,9 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class RatingBottomSheetFragment(
-    private val onSubmitClicked: (Int, BottomSheetDialogFragment) -> Unit = { _, _ -> },
-
-    ) : BottomSheetDialogFragment() {
+    private val onSubmitClicked: (rating: Int, dialog: BottomSheetDialogFragment) -> Unit = { _, _ -> },
+    private var onRatingChangeListener: (rating: Int, dialog: BottomSheetDialogFragment) -> Unit = { _, _ -> }
+) : BottomSheetDialogFragment() {
     private val binding by lazy {
         RatingBottomSheetBinding.inflate(layoutInflater)
     }
@@ -29,6 +29,21 @@ internal class RatingBottomSheetFragment(
     private var ratingThreeEmoji = R.drawable.threestaremoji
     private var ratingFourEmoji = R.drawable.fourstaremoji
     private var ratingFiveEmoji = R.drawable.fivestaremoji
+    private var backgroundColor: Int? = null
+    private var titleTextColor: Int? = null
+    private var descriptionTextColor: Int? = null
+    private var filledIcon: Int? = null
+    private var unfilledIcon: Int? = null
+    private var titleText: String? = null
+    private var descriptionTextString: String? = null
+    private var confirmButtonTextString: String? = null
+    private var confirmButtonTextColor: Int? = null
+    private var confirmButtonBackgroundColor: Int? = null
+    private var innerCardTextColorUnselected: Int? = null
+    private var innerCardTextColorSelected: Int? = null
+    private var innerCardBackgroundColorUnselected: Int? = null
+    private var innerCardBackgroundColorSelected: Int? = null
+    private var crossIcon: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,11 +61,52 @@ internal class RatingBottomSheetFragment(
             }
         }
         binding.apply {
+            backgroundColor?.let {
+                materialCardView15.setCardBackgroundColor(it)
+            }
+            crossIcon?.let {
+                closeBtn.setImageResource(it)
+            }
+            titleTextColor?.let {
+                titleTextView.setTextColor(ContextCompat.getColor(requireContext(), it))
+            }
+
+            descriptionTextColor?.let {
+                descriptionText.setTextColor(ContextCompat.getColor(requireContext(), it))
+            }
+            filledIcon?.let {
+                simpleRatingBar.setFilledDrawableRes(it)
+
+            }
+            unfilledIcon?.let {
+                simpleRatingBar.setEmptyDrawableRes(it)
+
+            }
+            titleText?.let {
+                binding.titleTextView.text = it
+
+            }
+            descriptionTextString?.let {
+                binding.descriptionText.text = it
+            }
+            confirmButtonTextString?.let {
+                binding.confirmButtonText.text = it
+            }
+            confirmButtonTextColor?.let {
+                binding.confirmButtonText.setTextColor(ContextCompat.getColor(requireContext(), it))
+            }
+            confirmButtonBackgroundColor?.let {
+                binding.submit.setCardBackgroundColor(it)
+            }
+
             setupCardViews()
             closeBtn.setOnClickListener {
                 dismiss()
             }
             simpleRatingBar.setOnRatingChangeListener { _, rating, fromUser ->
+                onRatingChangeListener.invoke(
+                    rating.toInt(), this@RatingBottomSheetFragment
+                )
                 if (fromUser) {
                     animateStarsToRating(rating.toInt())
                     emojiImage.setImageResource(
@@ -75,7 +131,7 @@ internal class RatingBottomSheetFragment(
                             }
 
                             5 -> {
-                                ratingFourEmoji
+                                ratingFiveEmoji
 
                             }
 
@@ -98,6 +154,7 @@ internal class RatingBottomSheetFragment(
         return binding.root
     }
 
+
     private fun setupCardView(cardView: MaterialCardView, textView: TextView) {
         cardView.setOnClickListener {
             val isSelected = cardViewStates[cardView]?.second ?: false
@@ -106,20 +163,59 @@ internal class RatingBottomSheetFragment(
             cardViewStates[cardView] = textView to newIsSelected
 
             if (newIsSelected) {
-                cardView.setCardBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(), R.color.selectedCardRatingSheet
+                innerCardBackgroundColorSelected?.let {
+                    cardView.setCardBackgroundColor(
+                        ContextCompat.getColor(
+                            requireContext(), it
+                        )
                     )
-                )
-                textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                } ?: run {
+                    cardView.setCardBackgroundColor(
+                        ContextCompat.getColor(
+                            requireContext(), R.color.selectedCardRatingSheet
+                        )
+                    )
+
+                }
+                innerCardTextColorSelected?.let {
+                    textView.setTextColor(ContextCompat.getColor(requireContext(), it))
+                } ?: run {
+                    textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                }
             } else {
-                cardView.setCardBackgroundColor(
-                    ContextCompat.getColor(
-                        requireContext(), android.R.color.transparent
+                innerCardBackgroundColorUnselected?.let {
+                    cardView.setCardBackgroundColor(
+                        ContextCompat.getColor(
+                            requireContext(), it
+                        )
                     )
-                )
-                textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.textInner))
+                } ?: run {
+                    cardView.setCardBackgroundColor(
+                        ContextCompat.getColor(
+                            requireContext(), android.R.color.transparent
+                        )
+                    )
+                }
+                innerCardTextColorUnselected?.let {
+                    textView.setTextColor(ContextCompat.getColor(requireContext(), it))
+                } ?: run {
+                    textView.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(), R.color.textInner
+                        )
+                    )
+                }
             }
+        }
+    }
+
+    private fun setInnerCardTextColorUnselected(color: Int) {
+        binding.apply {
+            tv1.setTextColor(ContextCompat.getColor(requireContext(), color))
+            tv3.setTextColor(ContextCompat.getColor(requireContext(), color))
+            tv2.setTextColor(ContextCompat.getColor(requireContext(), color))
+            tv4.setTextColor(ContextCompat.getColor(requireContext(), color))
+            tv5.setTextColor(ContextCompat.getColor(requireContext(), color))
         }
     }
 
@@ -149,28 +245,44 @@ internal class RatingBottomSheetFragment(
     }
 
     fun setBackgroundColor(color: Int) {
-        binding.apply {
-            materialCardView15.setCardBackgroundColor(color)
-        }
+        this.backgroundColor = color
     }
 
-    fun setTextColor(color: Int) {
-        binding.apply {
-            titleTextView.setTextColor(color)
+    fun setUnselectedColorInnerCards(color: Int) {
+        this.innerCardTextColorUnselected = color
+    }
 
-        }
+    fun setSelectedColorInnerCards(color: Int) {
+        this.innerCardTextColorSelected = color
+    }
+
+    fun setTitleTextColor(color: Int) {
+        this.titleTextColor = color
+
+    }
+
+    fun setCancelIcon(resId: Int) {
+        this.crossIcon = resId
+
+    }
+
+    fun setDescriptionTextColor(color: Int) {
+        this.descriptionTextColor = color
+    }
+    fun setInnerCardBackgroundColorUnselected(color: Int) {
+        this.innerCardBackgroundColorUnselected = color
+    }
+    fun setInnerCardBackgroundColorSelected(color: Int) {
+        this.innerCardBackgroundColorSelected = color
     }
 
     fun setFilledIcon(resId: Int) {
-        binding.apply {
-            simpleRatingBar.setFilledDrawableRes(resId)
-        }
+        this.filledIcon = resId
+
     }
 
     fun setUnfilledIcon(resId: Int) {
-        binding.apply {
-            simpleRatingBar.setEmptyDrawableRes(resId)
-        }
+        this.unfilledIcon = resId
     }
 
     fun setRatingOneEmoji(@DrawableRes resId: Int) {
@@ -191,6 +303,34 @@ internal class RatingBottomSheetFragment(
 
     fun setRatingFiveEmoji(@DrawableRes resId: Int) {
         this.ratingFiveEmoji = resId
+    }
+
+    fun setTitleText(text: String) {
+        this.titleText = text
+    }
+
+    fun setDescriptionText(text: String) {
+        this.descriptionTextString = text
+
+    }
+
+    fun setConfirmButtonText(text: String) {
+        this.confirmButtonTextString = text
+    }
+
+    fun setConfirmButtonTextColor(color: Int) {
+        this.confirmButtonTextColor = color
+    }
+
+    fun setConfirmButtonBackgroundColor(color: Int) {
+        this.confirmButtonBackgroundColor = color
+    }
+
+    override fun onResume() {
+        super.onResume()
+        innerCardTextColorUnselected?.let {
+            setInnerCardTextColorUnselected(it)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

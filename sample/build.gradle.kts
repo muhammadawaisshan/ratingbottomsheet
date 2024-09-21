@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":ratingbottomsheet"))
+//    implementation ("com.github.bucket04:ratingbottomsheet:1.0.1")
+    implementation (project(":ratingbottomsheet"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

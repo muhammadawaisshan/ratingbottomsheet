@@ -61,7 +61,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/closeBtn" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/descriptionText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
@@ -80,7 +80,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView35"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionText"
                     app:srb_clearRatingEnabled="true"
                     app:srb_clickable="true"
                     app:srb_drawableEmpty="@drawable/unfilled"
@@ -254,6 +254,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                          android:gravity="center"
+                        android:id="@+id/confirmButtonText"
                         android:paddingVertical="@dimen/_8sdp"
                         android:text="Submit"
                         android:textColor="@color/white"
