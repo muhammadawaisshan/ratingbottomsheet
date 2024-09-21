@@ -34,17 +34,9 @@ Basic Example
 To show the rating bottom sheet, use the RatingBottomSheetBuilder class to configure it:
  ```koltin
 RatingBottomSheetBuilder
-    .setBackgroundColor(R.color.your_background_color)
-    .setTextColor(R.color.your_text_color)
-    .setFilledIcon(R.drawable.your_filled_icon)
-    .setUnfilledIcon(R.drawable.your_unfilled_icon)
-    .setRatingOneEmoji(R.drawable.one_star_emoji)
-    .setRatingTwoEmoji(R.drawable.two_star_emoji)
-    .setRatingThreeEmoji(R.drawable.three_star_emoji)
-    .setRatingFourEmoji(R.drawable.four_star_emoji)
-    .setRatingFiveEmoji(R.drawable.five_star_emoji)
     .show(activity) { rating, dialog ->
         // Handle the rating submission
+        dialog.dismiss()
     }
 ```
 # Customization Options for Rating Bottom Sheet
