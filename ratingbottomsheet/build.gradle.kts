@@ -7,12 +7,9 @@ publishing {
     publications {
         create("release", MavenPublication::class) {
             groupId = "com.iobits.tech"
-            artifactId = "ratingbottomsheet"
-            version = "1.0.0"
-
-            afterEvaluate {
-                from(components["release"])
-            }
+            artifactId = "sexyratingbar"
+            version = "1.0.3"
+            from(components["release"])
         }
     }
 }
