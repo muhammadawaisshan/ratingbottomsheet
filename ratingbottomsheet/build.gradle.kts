@@ -6,9 +6,30 @@ plugins {
 publishing {
     publications {
         create<MavenPublication>("release") {
-            groupId = "com.iobits.tech"
+            groupId = "com.github.muhammadawaisshan"
             artifactId = "ratingbottomsheet"
-            version = "1.0.3"
+            version = "1.0.4"
+
+            // Optional: Add POM metadata
+            pom {
+                name.set("RatingBottomSheet")
+                description.set("A custom rating bottom sheet for Android.")
+                url.set("https://github.com/muhammadawaisshan/ratingbottomsheet")
+
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("muhammadawaisshan")
+                        name.set("Muhammad Awais Shan")
+                        email.set("muhammadawaisshan@gmail.com")
+                    }
+                }
+            }
         }
     }
 }
