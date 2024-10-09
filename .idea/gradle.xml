@@ -9,8 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ratingbar" />
             <option value="$PROJECT_DIR$/ratingbottomsheet" />
+            <option value="$PROJECT_DIR$/ratingbottomsheet/ratingbar" />
             <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>
