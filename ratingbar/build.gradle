@@ -1,15 +1,15 @@
-plugins{
+plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 }
 
 
-
 android {
     compileSdk 35
-namespace "com.willy.ratingbar"
+    namespace "com.willy.ratingbar"
     defaultConfig {
         minSdkVersion 24
+        targetSdk 35
     }
     buildTypes {
         release {
@@ -20,6 +20,9 @@ namespace "com.willy.ratingbar"
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
