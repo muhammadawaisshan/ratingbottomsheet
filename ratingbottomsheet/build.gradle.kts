@@ -3,7 +3,15 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
-
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.iobits.tech"
+            artifactId = "ratingbottomsheet"
+            version = "1.0.3"
+        }
+    }
+}
 android {
     namespace = "com.iobits.tech.ratingbottomsheet"
     compileSdk = 35
