@@ -3,19 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
-publishing {
-    publications {
-        create("release", MavenPublication::class) {
-            groupId = "com.iobits.tech"
-            artifactId = "sexyratingbar"
-            version = "1.0.3"
-            from(components["release"])
-        }
-    }
-}
+
 android {
     namespace = "com.iobits.tech.ratingbottomsheet"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -56,7 +47,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation("com.github.ome450901:SimpleRatingBar:1.5.1")
-    implementation("com.intuit.sdp:sdp-android:1.1.0")
+    implementation(project(":ratingbar"))
+    implementation(libs.sdp.android)
 
 }

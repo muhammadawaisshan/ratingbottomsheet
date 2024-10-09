@@ -155,7 +155,9 @@ internal class RatingBottomSheetFragment(
     }
 
 
-    private fun setupCardView(cardView: MaterialCardView, textView: TextView) {
+    private fun setupCardView(
+        cardView: MaterialCardView, textView: TextView
+    ) {
         cardView.setOnClickListener {
             val isSelected = cardViewStates[cardView]?.second ?: false
             val newIsSelected = !isSelected
@@ -269,9 +271,11 @@ internal class RatingBottomSheetFragment(
     fun setDescriptionTextColor(color: Int) {
         this.descriptionTextColor = color
     }
+
     fun setInnerCardBackgroundColorUnselected(color: Int) {
         this.innerCardBackgroundColorUnselected = color
     }
+
     fun setInnerCardBackgroundColorSelected(color: Int) {
         this.innerCardBackgroundColorSelected = color
     }
@@ -344,3 +348,5 @@ internal class RatingBottomSheetFragment(
     }
 
 }
+
+

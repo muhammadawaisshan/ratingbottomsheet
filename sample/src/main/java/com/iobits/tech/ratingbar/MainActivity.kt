@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.iobits.tech.ratingbottomsheet.RatingBottomSheetBuilder
+import com.iobits.tech.ratingbottomsheet.databinding.RatingBottomSheetBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
