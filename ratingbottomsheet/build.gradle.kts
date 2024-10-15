@@ -14,7 +14,7 @@ publishing {
 }
 android {
     namespace = "com.iobits.tech.ratingbottomsheet"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -55,7 +55,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":ratingbottomsheet:ratingbar"))
+    implementation(libs.simpleratingbar)
     implementation(libs.sdp.android)
 
 }

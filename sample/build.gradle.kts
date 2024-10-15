@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-
 }
 
 
@@ -37,8 +36,8 @@ android {
 }
 
 dependencies {
-    implementation ("com.github.muhammadawaisshan:ratingbottomsheet:1.0.2")
-//    implementation (project(":ratingbottomsheet"))
+//    implementation ("com.github.muhammadawaisshan:ratingbottomsheet:1.0.2")
+    implementation (project(":ratingbottomsheet"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
