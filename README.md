@@ -19,7 +19,7 @@ To include the library in your project, add the following lines to your `build.g
 
 ```kotlin
  dependencies {
-    implementation("com.github.muhammadawaisshan:ratingbottomsheet:LATEST_VERSION")
+    implementation("com.github.muhammadawaisshan:ratingbottomsheet:1.0.2")
 }
 ```
 
